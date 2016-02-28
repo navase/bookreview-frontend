@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router';
 import BookList from './BookList';
 
 class App extends React.Component {
     render() {
         return (
-            <BookList />
+          <div>
+            <Link to="/">Home</Link> 
+            {this.props.children}
+          </div>
         );
     }
 }

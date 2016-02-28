@@ -33,7 +33,7 @@ class BookList extends React.Component {
 
         {this.state.books.map(function(book, i) {
           return(
-            <p>{book.title}</p>
+            <p key={i}>{book.title}</p>
           );
         })}
       </div>
