@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import { Link } from 'react-router';
 
 class BookList extends React.Component {
   constructor() {
@@ -8,8 +9,6 @@ class BookList extends React.Component {
     this.state = {
       books: []
     };
-
-    console.log(this.state.books);
   }
 
   reloadList(event) {
@@ -33,7 +32,9 @@ class BookList extends React.Component {
 
         {this.state.books.map(function(book, i) {
           return(
-            <p key={i}>{book.title}</p>
+            <p key={i}>
+              <Link to={`/book/${book.id}`}>{book.title}</Link>
+            </p>
           );
         })}
       </div>
