@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import ReviewForm from './ReviewForm';
 
 class ReviewList extends React.Component {
   constructor() {
@@ -30,10 +31,12 @@ class ReviewList extends React.Component {
       <div>
         <h2>Reviews</h2>
 
+        <ReviewForm bookId={this.props.bookId} onChange={this.reloadList.bind(this)} />
+
         {this.state.reviews.map(function(review, i) {
           return(
             <div>
-              <p key={i}><strong>{review.name}</strong> rated it {review.rating}</p>
+              <p><strong>{review.name}</strong> rated it {review.rating}</p>
               <p>"{review.description}"</p>
             </div>
           );
