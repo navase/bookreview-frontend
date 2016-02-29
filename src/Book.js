@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import ReviewList from './ReviewList';
 
 class Book extends React.Component {
   constructor() {
@@ -34,6 +35,8 @@ class Book extends React.Component {
         <h2>Author: {this.state.book.author}</h2>
         <p><strong>Summary:</strong> {this.state.book.summary}</p>
         <p><strong>Publication date:</strong> {this.state.book.publication_date}</p>
+
+        <ReviewList bookId={this.props.params.bookId} />
       </div>
     );
   }
