@@ -50,7 +50,7 @@ class ReviewForm extends React.Component {
 
         <form onSubmit={this.createReview.bind(this)}>
           <p>Name:</p> <input ref="inputName" />
-          <p>Rating:</p> <input ref="inputRating" />
+          <p>Rating (1-5):</p> <input ref="inputRating" />
           <p>Description:</p> <input ref="inputDescription" />
 
           <button type="submit">Submit</button>

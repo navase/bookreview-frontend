@@ -7,7 +7,8 @@ class Book extends React.Component {
     super();
 
     this.state = {
-      book: {}
+      book: {},
+      average_rating: 0
     };
   }
 
@@ -24,6 +25,7 @@ class Book extends React.Component {
 
       component.setState({
         book: data.book,
+        average_rating: data.average_rating
       });
     });
   }
@@ -35,6 +37,7 @@ class Book extends React.Component {
         <h2>Author: {this.state.book.author}</h2>
         <p><strong>Summary:</strong> {this.state.book.summary}</p>
         <p><strong>Publication date:</strong> {this.state.book.publication_date}</p>
+        <p><strong>Average rating:</strong> {this.state.average_rating}★</p>
 
         <ReviewList bookId={this.props.params.bookId} />
       </div>

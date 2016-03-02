@@ -33,7 +33,7 @@ class BookList extends React.Component {
         {this.state.books.map(function(book, i) {
           return(
             <p key={i}>
-              <Link to={`/book/${book.id}`}>{book.title}</Link>
+              <Link to={`/book/${book.id}`}>{book.title} ({book.average_rating}★)</Link>
             </p>
           );
         })}
