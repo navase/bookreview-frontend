@@ -39,9 +39,14 @@ class Book extends React.Component {
             <p><strong>Publication date:</strong> {this.state.book.publication_date}</p>
             <p><strong>Average rating:</strong> {this.state.average_rating}★</p>
           </div>
-          <div className="col-md-9">
+
+          <div className="col-md-6">
             <h2>Summary</h2>
             <p> {this.state.book.summary}</p>
+          </div>
+
+          <div>
+            <img src={this.state.book.image} />
           </div>
         </div>
 

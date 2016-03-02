@@ -51,12 +51,12 @@ class ReviewForm extends React.Component {
         <form role="form" onSubmit={this.createReview.bind(this)}>
           <div className="row">
             <div className="form-group col-md-4">
-              <label for="name">Name:</label>
+              <label htmlFor="name">Name:</label>
               <input id="name" ref="inputName" className="form-control" />
             </div>
 
             <div className="form-group col-md-1">
-              <label for="rating">Rating:</label>
+              <label htmlFor="rating">Rating:</label>
               <select id="rating" ref="inputRating" className="form-control">
                 <option>1★</option>
                 <option>2★</option>
@@ -69,7 +69,7 @@ class ReviewForm extends React.Component {
 
           <div className="row">
             <div className="form-group col-md-5">
-              <label for="description">Description:</label>
+              <label htmlFor="description">Description:</label>
               <textarea id="description" ref="inputDescription" className="form-control" />
             </div>
           </div>
