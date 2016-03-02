@@ -30,13 +30,18 @@ class BookList extends React.Component {
       <div>
         <h1>BookList</h1>
 
-        {this.state.books.map(function(book, i) {
-          return(
-            <p key={i}>
-              <Link to={`/book/${book.id}`}>{book.title} ({book.average_rating}★)</Link>
-            </p>
-          );
-        })}
+        <div className="row">
+          {this.state.books.map(function(book, i) {
+            return(
+              <div key={i} className="col-md-6">
+                <h2><Link to={`/book/${book.id}`}>{book.title} ({book.average_rating}★)</Link></h2>
+                <p>By <strong>{book.author}</strong></p>
+                <p>{book.summary}</p>
+                <p className="read-more"><Link to={`/book/${book.id}`}>Read more ></Link></p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
