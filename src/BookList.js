@@ -34,8 +34,9 @@ class BookList extends React.Component {
           {this.state.books.map(function(book, i) {
             return(
               <div key={i} className="col-md-6">
-                <h2><Link to={`/book/${book.id}`}>{book.title} ({book.average_rating}★)</Link></h2>
+                <h2><Link to={`/book/${book.id}`}>{book.title}</Link></h2>
                 <p>By <strong>{book.author}</strong></p>
+                <p>Average rating: {book.average_rating}★</p>
                 <p>{book.summary}</p>
                 <p className="read-more"><Link to={`/book/${book.id}`}>Read more ></Link></p>
               </div>

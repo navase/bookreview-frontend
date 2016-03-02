@@ -21,8 +21,6 @@ class Book extends React.Component {
     let component = this;
 
     jQuery.getJSON("https://bookreviewapi.herokuapp.com/books/" + bookId, function(data) {
-      console.log(data);
-
       component.setState({
         book: data.book,
         average_rating: data.average_rating
@@ -34,10 +32,18 @@ class Book extends React.Component {
     return(
       <div>
         <h1>{this.state.book.title}</h1>
-        <h2>Author: {this.state.book.author}</h2>
-        <p><strong>Summary:</strong> {this.state.book.summary}</p>
-        <p><strong>Publication date:</strong> {this.state.book.publication_date}</p>
-        <p><strong>Average rating:</strong> {this.state.average_rating}★</p>
+        <div className="row">
+          <div className="col-md-3">
+            <h2>Book info</h2>
+            <p><strong>Author:</strong> {this.state.book.author}</p>
+            <p><strong>Publication date:</strong> {this.state.book.publication_date}</p>
+            <p><strong>Average rating:</strong> {this.state.average_rating}★</p>
+          </div>
+          <div className="col-md-9">
+            <h2>Summary</h2>
+            <p> {this.state.book.summary}</p>
+          </div>
+        </div>
 
         <ReviewList bookId={this.props.params.bookId} />
       </div>

@@ -29,13 +29,12 @@ class ReviewList extends React.Component {
   render() {
     return(
       <div>
-        <h2>Reviews</h2>
-
         <ReviewForm bookId={this.props.bookId} onChange={this.reloadList.bind(this)} />
 
+        <h2>Reviews</h2>
         {this.state.reviews.map(function(review, i) {
           return(
-            <div>
+            <div key={i}>
               <p><strong>{review.name}</strong> rated it {review.rating}</p>
               <p>"{review.description}"</p>
             </div>

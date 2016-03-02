@@ -46,14 +46,35 @@ class ReviewForm extends React.Component {
   render() {
     return(
       <div>
-        <p><strong>Add review</strong></p>
+        <h2>Add review</h2>
 
-        <form onSubmit={this.createReview.bind(this)}>
-          <p>Name:</p> <input ref="inputName" />
-          <p>Rating (1-5):</p> <input ref="inputRating" />
-          <p>Description:</p> <input ref="inputDescription" />
+        <form role="form" onSubmit={this.createReview.bind(this)}>
+          <div className="row">
+            <div className="form-group col-md-4">
+              <label for="name">Name:</label>
+              <input id="name" ref="inputName" className="form-control" />
+            </div>
 
-          <button type="submit">Submit</button>
+            <div className="form-group col-md-1">
+              <label for="rating">Rating:</label>
+              <select id="rating" ref="inputRating" className="form-control">
+                <option>1★</option>
+                <option>2★</option>
+                <option>3★</option>
+                <option>4★</option>
+                <option>5★</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="form-group col-md-5">
+              <label for="description">Description:</label>
+              <textarea id="description" ref="inputDescription" className="form-control" />
+            </div>
+          </div>
+
+          <button type="submit" className="btn btn-default">Submit</button>
         </form>
       </div>
     );
